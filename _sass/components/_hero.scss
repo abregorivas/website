@@ -2,10 +2,17 @@
   background: $color-blue-dark url($absolute_url + "/assets/images/hero/hacknight-women.jpg") center
     center no-repeat;
   background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100vh;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   max-height: 700px;
   min-height: 100vh;
   padding: 20px;
@@ -17,6 +24,12 @@
 
   &::after {
     @include position(absolute, 0 0 0 0);
+    background: -webkit-gradient(
+      linear,
+      left top, left bottom,
+      from(rgba($color-blue-dark, 0.3)),
+      to(rgba($color-blue-dark, 1))
+    );
     background: linear-gradient(
       to bottom,
       rgba($color-blue-dark, 0.3) 0%,
@@ -27,6 +40,12 @@
     z-index: 1;
 
     @media #{$bp-tablet-up} {
+      background: -webkit-gradient(
+        linear,
+        left top, left bottom,
+        color-stop(30%, rgba($color-blue-dark, 0)),
+        to(rgba($color-blue-dark, 1))
+      );
       background: linear-gradient(
         to bottom,
         rgba($color-blue-dark, 0) 30%,
@@ -66,6 +85,8 @@
   }
 
   @media #{$bp-tablet-up} {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 
     .form-input {

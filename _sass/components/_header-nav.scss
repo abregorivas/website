@@ -3,10 +3,13 @@ $nav-width: 240px;
 .header-nav {
   @include position(fixed, null 0 0 0);
   background: $color-white;
-  box-shadow: 0 -1px 0 0 rgba($color-black, 0.12);
+  -webkit-box-shadow: 0 -1px 0 0 rgba($color-black, 0.12);
+          box-shadow: 0 -1px 0 0 rgba($color-black, 0.12);
   padding: 10px 0;
 
   ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 
@@ -39,8 +42,11 @@ $nav-width: 240px;
 
   @media #{$bp-tablet-up} {
     background: none;
-    box-shadow: none;
-    flex-grow: 1;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     padding: 0 0 0 80px;
     position: static;
 
@@ -56,13 +62,18 @@ $nav-width: 240px;
 }
 
 body {
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
   transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
 
   &.nav-active {
-    transform: translateX(-$nav-width);
+    -webkit-transform: translateX(-$nav-width);
+            transform: translateX(-$nav-width);
 
     @media #{$bp-tablet-up} {
-      transform: none;
+      -webkit-transform: none;
+              transform: none;
     }
   }
 }
