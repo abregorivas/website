@@ -18,9 +18,13 @@
   order: 2;
 
   @media #{$bp-tablet-up} {
+    display: -ms-grid;
     display: grid;
     grid-gap: 24px;
+    -ms-grid-columns: 1fr 24px 1fr;
     grid-template-columns: repeat(2, 1fr);
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
     order: 3;
     width: 100%;
   }
