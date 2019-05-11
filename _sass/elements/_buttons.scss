@@ -2,7 +2,8 @@
   background: $color-red;
   border: 0;
   border-radius: 20px;
-  box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
+  -webkit-box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
+          box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
   color: $color-white;
   display: inline-block;
   font-size: 1rem;
@@ -11,6 +12,7 @@
   line-height: 40px;
   padding: 0 20px;
   text-decoration: none;
+  -webkit-transition: all 100ms ease-in;
   transition: all 100ms ease-in;
   white-space: nowrap;
 

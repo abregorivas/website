@@ -1,12 +1,14 @@
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 // sass-lint:disable no-universal-selectors
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 // sass-lint:enable no-universal-selectors
 
@@ -49,6 +51,7 @@ img {
 }
 
 a {
+  -webkit-transition: color 100ms ease-in;
   transition: color 100ms ease-in;
 
   &:link,
